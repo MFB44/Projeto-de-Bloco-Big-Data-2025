@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/matheus.boliveira@al.infnet.edu.br/ingest_kaggle_raw"
+					"notebookPath": "/Users/matheus.boliveira@al.infnet.edu.br/Projeto-de-Bloco-Big-Data-2025/ingest_kaggle_raw"
 				},
 				"linkedServiceName": {
 					"referenceName": "dbck_cluster",
@@ -42,7 +42,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/matheus.boliveira@al.infnet.edu.br/kaggle_trusted"
+					"notebookPath": "/Users/matheus.boliveira@al.infnet.edu.br/Projeto-de-Bloco-Big-Data-2025/kaggle_trusted"
 				},
 				"linkedServiceName": {
 					"referenceName": "dbck_cluster",
