@@ -1,0 +1,57 @@
+{
+	"name": "batch_kaggle",
+	"properties": {
+		"activities": [
+			{
+				"name": "ingestion_raw_kaggle",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/matheus.boliveira@al.infnet.edu.br/ingest_kaggle_raw"
+				},
+				"linkedServiceName": {
+					"referenceName": "dbck_cluster",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "kaggle_trusted",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "ingestion_raw_kaggle",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/matheus.boliveira@al.infnet.edu.br/kaggle_trusted"
+				},
+				"linkedServiceName": {
+					"referenceName": "dbck_cluster",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-06-11T02:17:24Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

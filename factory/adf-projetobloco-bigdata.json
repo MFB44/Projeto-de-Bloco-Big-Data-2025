@@ -1,0 +1,9 @@
+{
+	"name": "adf-projetobloco-bigdata",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "296eb96b-b946-49cf-94b0-5c43d236e911",
+		"tenantId": "aa495f2c-d37e-4b58-ab95-bf0874a3adb2"
+	}
+}
