@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-projetobloco-bigdata"
+		},
+		"dbck_cluster_accessToken": {
+			"value": ""
+		},
+		"jobs_dbck_accessToken": {
+			"value": ""
+		},
+		"dbck_cluster_properties_typeProperties_existingClusterId": {
+			"value": "0610-035811-yos1n10x"
+		}
+	}
+}

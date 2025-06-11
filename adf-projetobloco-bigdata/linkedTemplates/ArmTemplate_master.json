@@ -1,0 +1,63 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-projetobloco-bigdata"
+		},
+		"dbck_cluster_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'dbck_cluster'"
+		},
+		"jobs_dbck_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'jobs_dbck'"
+		},
+		"dbck_cluster_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0610-035811-yos1n10x"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-projetobloco-bigdata_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"dbck_cluster_accessToken": {
+						"value": "[parameters('dbck_cluster_accessToken')]"
+					},
+					"jobs_dbck_accessToken": {
+						"value": "[parameters('jobs_dbck_accessToken')]"
+					},
+					"dbck_cluster_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('dbck_cluster_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
