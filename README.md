@@ -17,6 +17,7 @@ Tecnologias usadas no desenvolvimento deste projeto:
 - Apache Spark
 
 ## Arquitetura proposta
+![architecture](https://github.com/user-attachments/assets/e7771180-3e5c-467d-a25d-e354e99b8699)
 
 
 ## Utilizando o projeto
