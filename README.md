@@ -13,7 +13,6 @@ Tecnologias usadas no desenvolvimento deste projeto:
 - Azure Data Factory
 - Databricks Notebooks
 - Python
-- Databricks Notebooks
 - Apache Spark
 
 ## Arquitetura proposta
